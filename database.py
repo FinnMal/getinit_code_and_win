@@ -10,8 +10,8 @@ class Database:
         self.c = self.conn.cursor()
 
         # remove old values
-        self.c.execute('DELETE FROM loads')
-        self.c.execute('DELETE FROM transporter_driver')
+        self.delete_all('loads')
+        self.delete_all('transporter_driver')
 
     # saves and closes the database
     def close(self):
@@ -76,15 +76,40 @@ class Database:
         transporter.pack_device(device, units)
         self.save_load(device, units, transporter)
 
+    # deletes every entry in given table
+    def delete_all(self, table):
+        self.c.execute('DELETE FROM '+table)
+
+    def delete_one(self, table, obj):
+        self.c.execute('DELETE FROM '+str(table)+' WHERE ID = ' + str(obj.get_id()))
+
     # creates a new device
     def create_device(self, name, units, weight, benefit):
         self.c.execute('INSERT INTO devices(name, units, weight, benefit) VALUES ("' + str(name) + '", "' + str(units) + '", "' + str(weight) + '", "' + str(benefit) + '")')
         return Device(self.c.lastrowid, name, units, weight, benefit)
 
+    # updates a device entry
+    def update_device(self, device, name, units, weight, benefit):
+        device.set_name(name)
+        device.set_units(units)
+        device.set_weight(weight)
+        device.set_benefit(benefit)
+        self.c.execute('UPDATE devices SET name = "' + str(name) + '", units = "' + str(units) + '", weight = "' + str(weight) + '", benefit = "' + str(benefit) + '"  WHERE ID = ' + str(device.get_id()))
+
     # creates a new transporter
     def create_transporter(self, capacity):
         self.c.execute('INSERT INTO transporter(capacity) VALUES ("' + str(capacity) + '")')
 
+    # updates a transporter entry
+    def update_transporter(self, transporter, capacity):
+        transporter.set_capacity(capacity)
+        self.c.execute('UPDATE transporter SET capacity = "' + str(capacity) + '" WHERE ID = ' + str(transporter.get_id()))
+
     # creates a new driver
     def create_driver(self, weight):
         self.c.execute('INSERT INTO driver(weight) VALUES ("' + str(weight) + '")')
+
+    # updates a driver entry
+    def update_driver(self, driver, weight):
+        driver.set_weight(weight)
+        self.c.execute('UPDATE driver SET weight = "' + str(weight) + '" WHERE ID = ' + str(driver.get_id()))

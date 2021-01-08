@@ -1,15 +1,18 @@
 from table_window import TableWindow
 
+
 # Driver GUI class: manages the table in table window for drivers
 class DriverGUI(TableWindow):
     def __init__(self, db, root):
-        self.driver = None
         self.db = db
         self.root = root
 
+        # default values
+        self.driver = []
         self.labels = ['Gewicht (in kg)']
-        self.row_values = self.get_driver()
         self.new_button_label = 'Neuer Fahrer'
+
+        self.row_values = self.get_driver()
         super(DriverGUI, self).__init__()
 
     # returns row values for each driver as array
@@ -24,33 +27,28 @@ class DriverGUI(TableWindow):
     def reload(self):
         self.load_table_content(self.get_driver())
 
-    # close callback
-    def on_close(self):
-        print('on close')
-
-    # delete callback
+    # delete button callback
     def on_delete(self, row):
-        driver_id = self.driver[row-1].get_id()
-        self.db.fetchall('DELETE FROM driver WHERE ID = '+str(driver_id))
+        self.db.delete_one('driver', self.driver[row - 1])
         self.reload()
 
-    # reset callback
+    # reset button callback
     def on_reset(self):
-        self.db.fetchall('DELETE FROM driver')
-        self.db.fetchall('INSERT INTO driver(weight) VALUES (72.4),(85.7)')
+        self.db.delete_all('driver')
+        self.db.create_driver('72.4')
+        self.db.create_driver('85.7')
         self.reload()
 
-    # done callback
+    # done button callback
     def on_done(self):
         i = -1
         for row in self.row_vars:
-            self.db.fetchall(
-                'UPDATE driver SET weight = "' + str(row[0].get()) + '" WHERE ID = ' + str(self.driver[i].get_id()))
+            self.db.update_drier(self.driver[i], row[0].get())
             i = i + 1
         self.master.destroy()
 
     # creates a new driver
-    def do_create(self):
+    def create_new(self):
         self.db.create_driver(self.new_object_vars[0].get())
         self.new_object_window.destroy()
         self.reload()

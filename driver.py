@@ -11,6 +11,9 @@ class Driver:
     def get_weight(self):
         return self.get_weight_kg()*1000
 
+    def set_weight(self, w):
+        self.weight = w
+
     # returns the weight in kg
     def get_weight_kg(self):
         return self.weight

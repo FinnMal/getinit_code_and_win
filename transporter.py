@@ -2,7 +2,6 @@ import math
 import table
 from driver import Driver
 
-
 class Transporter:
     def __init__(self, transporter_id, capacity):
         self.id = transporter_id
@@ -23,6 +22,9 @@ class Transporter:
     # returns the total capacity in kg
     def get_total_capacity_kg(self):
         return self.capacity
+
+    def set_capacity(self, c):
+        self.capacity = c
 
     # returns the reaming capacity
     def get_reaming_capacity(self):

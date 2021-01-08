@@ -1,7 +1,11 @@
+# TableIt file
+# source: https://github.com/SuperMaZingCoder/TableIt
+# author: SuperMaZingCoder
+# info: this class was not created by me
+
 import os
 import math
 import random
-
 
 def initColors():
     os.system("cls")

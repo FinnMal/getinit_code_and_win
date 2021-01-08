@@ -1,7 +1,12 @@
 from tkinter import *
 from DeliveryGame.game import Game
 
+from driver_gui import DriverGUI
+from devices_gui import DevicesGUI
+from transporter_gui import TransporterGUI
 
+
+# GUI class: handles the main GUI
 class GUI:
     def __init__(self, db, do_packing_func):
         self.db = db
@@ -111,7 +116,8 @@ class GUI:
                 canvas_text = device.get_emoji() + ' ' + device.get_name() + ': ' + str(item['units']) + ' Stück'
 
                 # place the counter text in canvas
-                self.canvas.create_text(0, y_pos, text='  ' + canvas_text, fill='white', tags=(canvas_id,), font=('Arial 16 bold'))
+                self.canvas.create_text(0, y_pos, text='  ' + canvas_text, fill='white', tags=(canvas_id,),
+                                        font=('Arial 16 bold'))
                 i = i + 1
             t = t + 1
 
@@ -138,7 +144,8 @@ class GUI:
                 self.loads_unit_counts[t][i] = self.loads_unit_counts[t][i] + 1
 
                 # configure the counter text
-                text = device.get_emoji() + ' ' + str(device.get_name()) + ': ' + str(self.loads_unit_counts[t][i]) + ' Stück'
+                text = device.get_emoji() + ' ' + str(device.get_name()) + ': ' + str(
+                    self.loads_unit_counts[t][i]) + ' Stück'
                 self.canvas.itemconfigure(device_text_id,
                                           text='  ' + text)
 
