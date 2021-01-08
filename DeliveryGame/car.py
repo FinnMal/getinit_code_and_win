@@ -14,8 +14,8 @@ class Car(ScreenObject):
         self.min_distance = 400
 
         # car images
-        self.images = ['car_green.png', 'car_orange.png', 'car_pink.png', 'car_red.png', 'card_dark_green.png',
-                       'card_light_blue.png']
+        self.images = ['car_green.png', 'car_orange.png', 'car_pink.png', 'car_red.png', 'car_dark_green.png',
+                       'car_light_blue.png']
 
     # returns the car speed depending on street speed and column
     def get_speed(self, street_speed):

@@ -4,6 +4,21 @@ from driver import Driver
 from transporter import Transporter
 
 
+# returns '0' if var is int
+# or replaces >"< with >'< in strings
+# returns a string to save in database
+def parse_var(var, is_int=False):
+    if not is_int:
+        return str(var).replace('"', "'")
+
+    if is_int:
+        try:
+            var = int(var)
+        except Exception as e:
+            var = 0
+        return str(var)
+
+
 class Database:
     def __init__(self):
         self.conn = sqlite3.connect('database.db')
@@ -78,14 +93,17 @@ class Database:
 
     # deletes every entry in given table
     def delete_all(self, table):
-        self.c.execute('DELETE FROM '+table)
+        self.c.execute('DELETE FROM ' + table)
 
     def delete_one(self, table, obj):
-        self.c.execute('DELETE FROM '+str(table)+' WHERE ID = ' + str(obj.get_id()))
+        self.c.execute('DELETE FROM ' + str(table) + ' WHERE ID = ' + str(obj.get_id()))
 
     # creates a new device
     def create_device(self, name, units, weight, benefit):
-        self.c.execute('INSERT INTO devices(name, units, weight, benefit) VALUES ("' + str(name) + '", "' + str(units) + '", "' + str(weight) + '", "' + str(benefit) + '")')
+        self.c.execute(
+            'INSERT INTO devices(name, units, weight, benefit) VALUES ("' + parse_var(name) + '", "' + parse_var(units,
+                                                                                                                 True) + '", "' + parse_var(
+                weight, True) + '", "' + parse_var(benefit, True) + '")')
         return Device(self.c.lastrowid, name, units, weight, benefit)
 
     # updates a device entry
@@ -94,22 +112,26 @@ class Database:
         device.set_units(units)
         device.set_weight(weight)
         device.set_benefit(benefit)
-        self.c.execute('UPDATE devices SET name = "' + str(name) + '", units = "' + str(units) + '", weight = "' + str(weight) + '", benefit = "' + str(benefit) + '"  WHERE ID = ' + str(device.get_id()))
+        self.c.execute('UPDATE devices SET name = "' + parse_var(name) + '", units = "' + parse_var(units,
+                                                                                                    True) + '", weight = "' + parse_var(
+            weight, True) + '", benefit = "' + parse_var(benefit, True) + '"  WHERE ID = ' + str(device.get_id()))
 
     # creates a new transporter
     def create_transporter(self, capacity):
-        self.c.execute('INSERT INTO transporter(capacity) VALUES ("' + str(capacity) + '")')
+        self.c.execute('INSERT INTO transporter(capacity) VALUES ("' + parse_var(capacity, True) + '")')
 
     # updates a transporter entry
     def update_transporter(self, transporter, capacity):
         transporter.set_capacity(capacity)
-        self.c.execute('UPDATE transporter SET capacity = "' + str(capacity) + '" WHERE ID = ' + str(transporter.get_id()))
+        self.c.execute('UPDATE transporter SET capacity = "' + parse_var(capacity, True) + '" WHERE ID = ' + str(
+            transporter.get_id()))
 
     # creates a new driver
     def create_driver(self, weight):
-        self.c.execute('INSERT INTO driver(weight) VALUES ("' + str(weight) + '")')
+        self.c.execute('INSERT INTO driver(weight) VALUES ("' + parse_var(weight, True) + '")')
 
     # updates a driver entry
     def update_driver(self, driver, weight):
         driver.set_weight(weight)
-        self.c.execute('UPDATE driver SET weight = "' + str(weight) + '" WHERE ID = ' + str(driver.get_id()))
+        self.c.execute(
+            'UPDATE driver SET weight = "' + parse_var(weight, True) + '" WHERE ID = ' + str(driver.get_id()))

@@ -189,16 +189,17 @@ class GUI:
 
     # renders the deliver button
     def render_deliver_button(self):
-        Button(self.master, text='Ausliefern', command=lambda: Game(self.master, self.transporter).render()).place(x=170, y=10)
+        Button(self.master, text='Ausliefern', command=lambda: Game(self.master, self.transporter).render()).place(x=160, y=10)
 
     # renders the GUI
     def render(self):
         self.master = Tk()
+        self.master.title('LKW Manager v.1.0')
         self.master.geometry('480x80')
         self.master.configure(background='#2C2C2E')
         self.master.protocol("WM_DELETE_WINDOW", self.close)
 
-        Button(self.master, text='Lieferlisten erstellen', command=self.start_packing).place(x=10, y=10)
+        Button(self.master, text='Ladeliste erstellen', command=self.start_packing).place(x=10, y=10)
         Button(self.master, text='Geräte bearbeiten', command=lambda: DevicesGUI(self.db, self.master)).place(x=10,
                                                                                                               y=40)
         Button(self.master, text='Transporter bearbeiten', command=lambda: TransporterGUI(self.db, self.master)).place(

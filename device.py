@@ -22,6 +22,7 @@ class Device:
     # if a device gets packet on the transporter,
     # the available units will decrease
     def get_units(self):
+        self.units = int(self.units)
         return self.units
 
     def set_units(self, u):

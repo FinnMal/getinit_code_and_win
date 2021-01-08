@@ -52,7 +52,7 @@ class DevicesGUI(TableWindow):
     def on_done(self):
         i = -1
         for row in self.row_vars:
-            self.db.update_device(self.devices[i], row[0].get().replace('"', "'"), row[1].get(), row[2].get(),
+            self.db.update_device(self.devices[i], row[0].get(), row[1].get(), row[2].get(),
                                   row[3].get())
             i = i + 1
         self.master.destroy()

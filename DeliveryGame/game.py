@@ -37,6 +37,7 @@ class Game:
 
         # create window as child of parent_window
         self.master = Toplevel(self.parent_window)
+        self.master.title('Delivery Game v.1.0')
         self.master.configure(background='#2C2C2E')
         self.master.protocol("WM_DELETE_WINDOW", self.close)
 

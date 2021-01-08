@@ -66,6 +66,7 @@ class TableWindow:
     def on_create(self):
         # create tkinter toplevel window
         self.new_object_window = Toplevel(self.master)
+        self.new_object_window.title(self.new_button_label)
         self.new_object_window.configure(background='#2C2C2E')
 
         # render background color for a selected row
@@ -151,6 +152,7 @@ class TableWindow:
     # renders the tkinter window
     def render(self):
         self.master = Toplevel(self.root)
+        self.master.title('Verwaltung')
         self.master.configure(background='#2C2C2E')
 
         self.load_table_content(self.row_values)
