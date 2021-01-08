@@ -42,6 +42,7 @@ class GUI:
         # show result in canvas
         self.render_canvas()
         self.animate_canvas()
+        self.render_deliver_button()
 
     # renders the canvas object
     def render_canvas(self):
@@ -186,6 +187,10 @@ class GUI:
         if self.animation_status != 2:
             self.canvas.after(1000 // 60, self.animate_canvas)
 
+    # renders the deliver button
+    def render_deliver_button(self):
+        Button(self.master, text='Ausliefern', command=lambda: Game(self.master, self.transporter).render()).place(x=170, y=10)
+
     # renders the GUI
     def render(self):
         self.master = Tk()
@@ -193,9 +198,7 @@ class GUI:
         self.master.configure(background='#2C2C2E')
         self.master.protocol("WM_DELETE_WINDOW", self.close)
 
-        Button(self.master, text='Show', command=self.start_packing).place(x=10, y=10)
-        Button(self.master, text='Ausliefern', command=lambda: Game(self.master, self.transporter).render()).place(x=80,
-                                                                                                                   y=10)
+        Button(self.master, text='Lieferlisten erstellen', command=self.start_packing).place(x=10, y=10)
         Button(self.master, text='Geräte bearbeiten', command=lambda: DevicesGUI(self.db, self.master)).place(x=10,
                                                                                                               y=40)
         Button(self.master, text='Transporter bearbeiten', command=lambda: TransporterGUI(self.db, self.master)).place(
