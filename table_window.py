@@ -91,7 +91,10 @@ class TableWindow:
         Button(self.new_object_window, text='Abbrechen', command=lambda: self.new_object_window.destroy()).grid(row=5, column=0, pady=15)
     
     # loads the table content
-    def load_table_content(self, row_values=self.row_values):
+    def load_table_content(self, row_values=None):
+        if not row_values:
+            row_values = self.row_values
+
         # remove old entries
         self.clear()
 
