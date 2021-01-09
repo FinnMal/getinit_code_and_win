@@ -61,19 +61,12 @@ After pressing on "Geräte bearbeiten" (edit devices) you see this:
 When you click on "Ladeliste erstellen". The button "Ausliefern" (deliver) becomes visible. This leads you to ...
 
 ## The Delivery Game
-<table>
-<tr><td>
-  
-
 ![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/delivery_game_demo.gif?raw=true)
-
-</td><td>
 The delivery game wasn't part of the task. In order to achieve additional points, I implemented it anyway.
 <br>
 The aim of the game is to collect all the packets from the loading list and not cause an accident. The counters above show how many units of the various devices have already been collected.
 <br>
 Once all the packages have been collected, you can switch to the next transporter.
-</td></tr></table>
 
 
 
