@@ -25,6 +25,7 @@ This results in the following loading lists:
 | Mobiltelefon Heavy Duty | 220   |
 | Mobiltelefon Büro       | 60    |
 | Tablet outdoor groß     | 283   |
+
 ➡️ ges. Nutzwert: 44764
 ➡️ freie Kapazität: 724 g
 
@@ -34,5 +35,6 @@ This results in the following loading lists:
 | ------------------- |-------|
 | Tablet outdoor groß | 87    |
 | Tablet Büro klein   | 527   |
+
 ➡️ ges. Nutzwert: 26996
 ➡️ freie Kapazität: 605 g
