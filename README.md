@@ -16,13 +16,15 @@ In order to load the trucks as effectively as possible, I therefore used a heuri
 First, the devices are sorted in descending order according to their effectiveness (see database.py l.46). The effectiveness of a device is determined by the ratio between weight and utility. The formula for this is “effectiveness = weight / utility value”. After sorting, the devices are packed into the truck, starting with the most effective. Depending on how much space is still available in the truck, not all units of a device are packed, or the algorithm jumps to the next element.
 
 This results in the following loading lists:
+
 🚚 TRANSPORTER NR.1
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Device                  | Units |
+| ----------------------- |-------|
+| Mobiltelefon Outdoor    | 157   |
+| Mobiltelefon Heavy Duty | 220   |
+| Mobiltelefon Büro       | 60    |
+| Tablet outdoor groß     | 283   |
 
 There must be at least 3 dashes separating each header cell.
 The outer pipes (|) are optional, and you don't need to make the 
