@@ -45,6 +45,7 @@ My application basically consists of two areas. One is the area for editing the 
 GUI first area:
 ![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area.png?raw=true)
 ![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area_devices.png?raw=true)
+![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/second_area.png?raw=true)
 
 
 GUI second area:
