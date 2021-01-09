@@ -49,18 +49,19 @@ My application basically consists of two areas. One is the area for editing the 
 
 ### GUI first area:
 <br>
-![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area.png?raw=true)
+
+![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area_devices.png?raw=true)
 
 After pressing on "Geräte bearbeiten" (edit devices) you see this:
 <br>
+
 ![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area_devices.png?raw=true)
 
-## GUI second area:
-<br>
+
+When you click on "Ladeliste erstellen". The button "Ausliefern" (deliver) becomes visible. This leads you to ...
+
+## The Delivery Game
 ![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/second_area.png?raw=true)
-
-
-GUI second area:
 
 
 
