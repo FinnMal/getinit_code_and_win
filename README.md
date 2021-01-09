@@ -1,4 +1,4 @@
-
+# Get in IT Code and Win
 This is my solution for the get in it coding challenge 2020/21. Further information can be found on the get-in-it page: https://www.get-in-it.de/coding-challenge
 The submission deadline was January 10th, 2021, so no changes have been made to the project since then.
 
