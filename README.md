@@ -14,7 +14,9 @@ In order to load the trucks as effectively as possible, I therefore used a heuri
 
 First, the devices are sorted in descending order according to their effectiveness:
 <br>
-<code>data = self.fetchall('SELECT * FROM devices ORDER BY weight/benefit')</code>
+```
+data = self.fetchall('SELECT * FROM devices ORDER BY weight/benefit')
+```
 
 The effectiveness of a device is determined by the ratio between weight and utility. The formula for this is:
 <br>
@@ -45,11 +47,25 @@ This results in the following loading lists:
 </td></tr></table>
 
 ## The Programm
+
+### Installation
+After you have downloaded the project you have to install all required packages with:
+<br>
+```
+pip install -r requirements.txt
+```
+
+The program is written in Python, so make sure you have Python version 3 installed.
+<br>Enter the following command to start the program:
+```
+python main.py
+```
+<br>
+
+### Description
 My application basically consists of two areas. One is the area for editing the database entries for devices, transporter and drivers, as well as creating the loading lists. And secondly, the delivery game area in which the user has the task of collecting the packages with his truck. The second area (game area) was not part of the requirements.
 
 ### GUI first area:
-<br>
-
 ![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area.png?raw=true)
 
 After pressing on "Geräte bearbeiten" (edit devices) you see this:
@@ -62,12 +78,12 @@ When you click on "Ladeliste erstellen". The button "Ausliefern" (deliver) becom
 
 ## The Delivery Game
 The delivery game wasn't part of the task. In order to achieve additional points, I implemented it anyway.
+<br>
+The aim of the game is to collect all the packets from the loading list and not cause an accident. The counters above show how many units of the various devices have already been collected. Once all the packages have been collected, you can switch to the next transporter.
+
 
 ![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/delivery_game_demo.gif?raw=true)
 
-
-<br>
-The aim of the game is to collect all the packets from the loading list and not cause an accident. The counters above show how many units of the various devices have already been collected. Once all the packages have been collected, you can switch to the next transporter.
 
 ### Controls
 | Key                                 | Function                          |
