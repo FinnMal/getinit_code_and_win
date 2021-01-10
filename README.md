@@ -25,7 +25,7 @@ data = self.fetchall('SELECT * FROM devices ORDER BY weight/benefit')
 <br>
 The effectiveness of a device is determined by the ratio between weight and utility. The formula for this is:
 <code>effectiveness = weight / utility value</code>
-<br>
+<br><br>
 After sorting, the devices are packed into the truck, starting with the most effective. Depending on how much space is still available in the truck, not all units of a device are packed, or the algorithm jumps to the next element.
 <br>
 This results in the following loading lists:
