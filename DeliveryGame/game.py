@@ -1,11 +1,6 @@
-import time
-import random
 import threading
-import PIL.Image
 from tkinter import *
 from pynput import keyboard
-from playsound import playsound
-from DeliveryGame.car import Car
 from DeliveryGame.alert import Alert
 from DeliveryGame.truck import Truck
 from DeliveryGame.cars_manager import CarsManager

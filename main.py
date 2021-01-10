@@ -1,8 +1,5 @@
-from database import Database
-from device import Device
-from driver import Driver
-from transporter import Transporter
 from gui import GUI
+from database import Database
 
 
 # starts the packing algorithm

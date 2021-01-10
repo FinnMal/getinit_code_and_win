@@ -12,7 +12,7 @@ class Alert:
     # shows the alert
     def open(self):
         # create alert text, and place it in center of canvas
-        self.canvas.create_text(int(self.canvas['width']) / 2, int(self.canvas['height']) / 2, fill='black', font='Arial 20 bold', text=self.text, tags=('alert', 'alert_text',))
+        self.canvas.create_text(int(self.canvas['width']) / 2, int(self.canvas['height']) / 2, fill='black', font='Arial 14 bold', text=self.text, tags=('alert', 'alert_text',))
 
         # create white background for text
         r = self.canvas.create_rectangle(self.canvas.bbox('alert_text'), fill="white", tags=('alert', 'background_color'))
@@ -26,7 +26,7 @@ class Alert:
             # create buttons text
             self.buttons_canvas_label = self.canvas.create_text(int(self.canvas['width']) / 2,
                                                                 int(self.canvas['height']) / 2 + 30, fill='black',
-                                                                font='Arial 16 bold',
+                                                                font='Arial 12 bold',
                                                                 text=self.get_buttons_text(),
                                                                 tags=('alert', 'alert_buttons',))
 

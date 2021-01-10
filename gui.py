@@ -68,8 +68,9 @@ class GUI:
             total_devices_count = total_devices_count + last_transporter_devices_count
 
             # place transporter icon
-            self.canvas.create_text(600, 15 + last_transporter_devices_count * 52, text='  🚚', fill='white',
-                                    tags=('transporter_icon', 'transporter_' + str(i)), font=('Helvetica 30'))
+            truck_image = PhotoImage(file='./assets/img/truck_emoji.png')
+            setattr(self.master, 'truck_image_'+str(i), truck_image)
+            self.canvas.create_image((600, 3 + last_transporter_devices_count * 52), image=truck_image, anchor='nw', tags=('transporter_icon', 'transporter_' + str(i), ))
             i = i + 1
 
         # set canvas width and height depending on transporter and device count
@@ -92,7 +93,7 @@ class GUI:
             # place the label
             self.canvas.create_text(150, 16 + last_transporter_devices_count * 52, text='  LIEFERUNG NR.' + str(i + 1),
                                     fill='white', tags=('transporter_label', 'transporter_label_' + str(i)),
-                                    font=('Arial 18 bold'))
+                                    font=('Arial 15 bold'))
             i = i + 1
 
     # renders the counter for each device in canvas
@@ -114,11 +115,11 @@ class GUI:
                 # position, id and text
                 y_pos = i * 33 + 60 + last_transporter_devices_count * 52
                 canvas_id = 'transporter_' + str(t) + '_text_' + str(device.get_id())
-                canvas_text = device.get_emoji() + ' ' + device.get_name() + ': ' + str(item['units']) + ' Stück'
+                canvas_text = device.get_name() + ': ' + str(item['units']) + ' Stück'
 
                 # place the counter text in canvas
                 self.canvas.create_text(0, y_pos, text='  ' + canvas_text, fill='white', tags=(canvas_id,),
-                                        font=('Arial 16 bold'))
+                                        font=('Arial 14'))
                 i = i + 1
             t = t + 1
 
@@ -145,10 +146,8 @@ class GUI:
                 self.loads_unit_counts[t][i] = self.loads_unit_counts[t][i] + 1
 
                 # configure the counter text
-                text = device.get_emoji() + ' ' + str(device.get_name()) + ': ' + str(
-                    self.loads_unit_counts[t][i]) + ' Stück'
-                self.canvas.itemconfigure(device_text_id,
-                                          text='  ' + text)
+                text = device.get_name() + ': ' + str(self.loads_unit_counts[t][i]) + ' Stück'
+                self.canvas.itemconfigure(device_text_id, text='  ' + text)
 
             i = i + 1
         return done
@@ -158,7 +157,7 @@ class GUI:
         if self.animation_status == 0:
             # move the transporter icon to x = 70
             x1, y1, x2, y2 = self.canvas.bbox('transporter_0')
-            if x2 > 70:
+            if x2 > 55:
                 self.canvas.move('transporter_icon', -3.5, 0)
             else:
                 # if animation is done
@@ -189,7 +188,7 @@ class GUI:
 
     # renders the deliver button
     def render_deliver_button(self):
-        Button(self.master, text='Ausliefern', command=lambda: Game(self.master, self.transporter).render()).place(x=160, y=10)
+        Button(self.master, text='Ausliefern', command=lambda: Game(self.master, self.transporter).render()).place(x=150, y=10)
 
     # renders the GUI
     def render(self):

@@ -1,6 +1,3 @@
-import time
-import random
-from tkinter import *
 from DeliveryGame.screen_object import ScreenObject
 
 

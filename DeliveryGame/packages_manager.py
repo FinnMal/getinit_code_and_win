@@ -62,7 +62,7 @@ class PackagesManager:
             collected = self.device_counters[device_name]['collected']
 
             # render text
-            self.canvas.create_text(200, i * 20 + 50, fill='black', font='Arial 16 bold',
+            self.canvas.create_text(200, i * 20 + 50, fill='black', font='Arial 13 bold',
                                     text=device_name + ' ' + str(collected) + '/' + str(total),
                                     tags=('device_counters', device_name,))
 

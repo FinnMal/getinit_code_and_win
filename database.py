@@ -13,7 +13,7 @@ def parse_var(var, is_int=False):
 
     if is_int:
         try:
-            var = int(var)
+            var = float(var)
         except Exception as e:
             var = 0
         return str(var)

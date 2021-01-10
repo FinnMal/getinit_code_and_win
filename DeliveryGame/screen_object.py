@@ -1,7 +1,6 @@
 import time
 import random
 import threading
-import math
 
 from tkinter import PhotoImage
 

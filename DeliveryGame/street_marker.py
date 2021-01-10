@@ -1,7 +1,3 @@
-import time
-from tkinter import *
-
-
 # Street Marker class: class for street lines
 # INFO: street markers are not handled by the objects manager,
 #       because they are unnecessary for other objects

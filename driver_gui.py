@@ -43,7 +43,7 @@ class DriverGUI(TableWindow):
     def on_done(self):
         i = -1
         for row in self.row_vars:
-            self.db.update_drier(self.driver[i], row[0].get())
+            self.db.update_driver(self.driver[i], row[0].get())
             i = i + 1
         self.master.destroy()
 

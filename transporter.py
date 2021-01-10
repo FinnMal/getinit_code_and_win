@@ -1,6 +1,6 @@
 import math
 import table
-from driver import Driver
+
 
 class Transporter:
     def __init__(self, transporter_id, capacity):
@@ -17,7 +17,7 @@ class Transporter:
 
     # returns the total capacity
     def get_total_capacity(self):
-        return self.capacity*1000
+        return self.capacity * 1000
 
     # returns the total capacity in kg
     def get_total_capacity_kg(self):
@@ -68,8 +68,8 @@ class Transporter:
         for l in self.load:
             table_load_list.append([l['device'].get_name(), l['units']])
 
-        print('🚚 TRANSPORTER NR.' + str(self.get_id() + 1))
+        print('TRANSPORTER NR.' + str(self.get_id() + 1))
         table.printTable(table_load_list, useFieldNames=True)
-        print('➡️ ges. Nutzwert: ' + str(self.get_benefit()))
-        print('➡️ freie Kapazität: ' + str(round(self.get_reaming_capacity())) + ' g')
+        print('->️ ges. Nutzwert: ' + str(self.get_benefit()))
+        print('-> freie Kapazität: ' + str(round(self.get_reaming_capacity())) + ' g')
         print('\n')

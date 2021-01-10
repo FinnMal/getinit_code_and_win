@@ -11,7 +11,7 @@ class Truck:
         # default values
         self.column = 0
         self.speed_kmh = 0
-        self.move_delay = 0.001
+        self.move_delay = 0.00001
 
     # renders the truck
     def render(self):
@@ -25,7 +25,7 @@ class Truck:
         self.canvas.create_image((5, canvas_height - 250), image=truck_image, anchor='nw', tags=('truck',))
 
         # create speed text
-        self.canvas.create_text(canvas_width/2, 10, fill='white', font='Arial 16 bold', text='Speed: 0 km/h', tags=('truck_speed',))
+        self.canvas.create_text(canvas_width/2, 10, fill='white', font='Arial 13 bold', text='Speed: 0 km/h', tags=('truck_speed',))
 
     # keyboard listener
     def on_key_press(self, key):

@@ -1,6 +1,5 @@
 import random
 import time
-import threading
 from DeliveryGame.car import Car
 
 

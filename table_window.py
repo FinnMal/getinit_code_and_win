@@ -100,17 +100,17 @@ class TableWindow:
         self.clear()
 
         # render background color for selection
-        self.selected_background_color = Label(self.master, text='', fg='#3A3A3C', bg="#3A3A3C", font='Helvetica 16 bold')
+        self.selected_background_color = Label(self.master, text='', fg='#3A3A3C', bg="#3A3A3C", font='Arial 13 bold')
         self.selected_background_color.grid(row=0, column=0, sticky='ew', columnspan=6)
         
         # render header background color
-        header_background = Label(self.master, text='', fg='#0D84FF', bg='#0D84FF', font='Helvetica 16 bold')
+        header_background = Label(self.master, text='', fg='#0D84FF', bg='#0D84FF', font='Arial 13 bold')
         header_background.grid(row=0, column=0, sticky='ew', columnspan=6)
 
         i = 0
         for label in self.labels:
             # render label at the top
-            Label(self.master, text=label, bg='#0D84FF', fg='white', font='Helvetica 16 bold').grid(row=0, column=i)
+            Label(self.master, text=label, bg='#0D84FF', fg='white', font='Arial 13 bold').grid(row=0, column=i)
             i = i + 1
 
         i = 1
