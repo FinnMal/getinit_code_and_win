@@ -50,7 +50,7 @@ My application basically consists of two areas. One is the area for editing the 
 ### GUI first area:
 <br>
 
-![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area_devices.png?raw=true)
+![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/first_area.png?raw=true)
 
 After pressing on "Geräte bearbeiten" (edit devices) you see this:
 <br>
@@ -61,7 +61,28 @@ After pressing on "Geräte bearbeiten" (edit devices) you see this:
 When you click on "Ladeliste erstellen". The button "Ausliefern" (deliver) becomes visible. This leads you to ...
 
 ## The Delivery Game
-![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/second_area.png?raw=true)
+The delivery game wasn't part of the task. In order to achieve additional points, I implemented it anyway.
+
+![alt text](https://github.com/FinnMal/getinit_code_and_win/blob/main/assets/img/delivery_game_demo.gif?raw=true)
+
+
+<br>
+The aim of the game is to collect all the packets from the loading list and not cause an accident. The counters above show how many units of the various devices have already been collected. Once all the packages have been collected, you can switch to the next transporter.
+
+### Controls
+| Key                                 | Function                          |
+| ----------------------------------- |-----------------------------------|
+| <code>Left</code> / <code>A</code>  | truck steers one lane to the left |
+| <code>Right</code> / <code>D</code> | steer truck one lane to the right |
+| <code>Up</code> /<code>W</code>     | increase the speed of the truck   |
+| <code>Down</code> / <code>S</code>  | Reduce the speed of the truck     |
+
+#### In the info box
+| Key                                   | Function                     |
+| ------------------------------------- |------------------------------|
+| <code>Left</code>/<code>A</code>      | Move one button to the left  |
+| <code>Right</code>/<code>D</code>     | Move one button to the right |
+| <code>Space</code>/<code>Enter</code> | Press the selected button    |
 
 
 
