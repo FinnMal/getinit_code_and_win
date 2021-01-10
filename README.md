@@ -1,5 +1,5 @@
-# Get in IT Code and Win
-This is my solution for the get in it coding challenge 2020/21.
+# Get in IT: Code and Win
+This is my solution for the get in IT coding challenge 2020/21.
 Further information can be found on the get-in-it page: https://www.get-in-it.de/coding-challenge
 <br>
 The submission deadline was January 10th, 2021, so the project has not been maintained since then.
@@ -83,7 +83,7 @@ After pressing on "Geräte bearbeiten" (edit devices) you see this:
 When you click on "Ladeliste erstellen". The button "Ausliefern" (deliver) becomes visible. This leads you to ...
 
 ## The Delivery Game
-The delivery game wasn't part of the task. In order to achieve additional points, I implemented it anyway.
+The delivery game wasn't part of the task.
 <br>
 The aim of the game is to collect all the packages from the loading list and not cause an car accident. The counters above show how many units of the various devices have already been collected. Once all the packages have been collected, you can switch to the next transporter.
 
