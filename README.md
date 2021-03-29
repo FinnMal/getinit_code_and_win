@@ -1,6 +1,7 @@
 # Get in IT: Code and Win
 This is my solution for the get in IT coding challenge 2020/21.
 Further information can be found on the get-in-it page: https://www.get-in-it.de/coding-challenge
+<br>
 EDIT: I got the 3rd place! 🎉
 <br>
 The submission deadline was January 10th, 2021, so the project has not been maintained since then.
