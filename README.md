@@ -2,9 +2,9 @@
 This is my solution for the get in IT coding challenge 2020/21.
 Further information can be found on the get-in-it page: https://www.get-in-it.de/coding-challenge
 <br>
-EDIT: I got the 3rd place! 🎉
-<br>
 The submission deadline was January 10th, 2021, so the project has not been maintained since then.
+<br>
+EDIT: I got the 3rd place! 🎉
 
 ## The Task
 The task was to drive two trucks to a location in Bonn and only have a limited capacity to deal with different devices as effectively as possible. The devices differ in "utility" value, weight and the required number in Bonn. The "utility" value indicates how urgently a certain device is needed. The devices and their values can be viewed here: https://www.get-in-it.de/imgs/it/codingCompetition/bwi/code_for_bwi.pdf
